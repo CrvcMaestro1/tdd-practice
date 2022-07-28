@@ -1,0 +1,14 @@
+# Python cache directories
+__pycache__/
+
+# CLI installer files
+*.egg-info
+
+# Jetbrains project files
+.idea/
+
+# Pytest cache files
+.pytest_cache/
+
+# Virtual environment
+env
