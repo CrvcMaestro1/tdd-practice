@@ -1,6 +1,6 @@
 import pytest
 
-from src.app import integer_sum, fizz_buzz
+from src.app import integer_sum, FizzBuzz
 
 
 @pytest.fixture
@@ -14,7 +14,10 @@ def test_integer_sum() -> None:
     assert result == expected_result
 
 
-def test_fizz_buzz() -> None:
-    expected_result = [1, 2, "Fizz", 4, "Buzz"]
-    result = fizz_buzz(6)
-    assert result == expected_result
+class TestFizzBuzz:
+
+    def test_fizz_buzz(self) -> None:
+        expected_result = [1, 2, "Fizz", 4, "Buzz"]
+        fiz_buzz = FizzBuzz()
+        result = fiz_buzz.run(6)
+        assert result == expected_result

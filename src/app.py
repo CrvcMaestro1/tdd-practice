@@ -5,16 +5,29 @@ def integer_sum(first_number: int, second_number: int) -> int:
     return first_number + second_number
 
 
-def fizz_buzz(number: int) -> List:
-    result = []
-    start = 1
-    for i in range(start, number):
-        if i % 3 == 0:
-            result.append("Fizz")
-        elif i % 5 == 0:
-            result.append("Buzz")
-        elif i % 3 == 0 and i % 5 == 0:
-            result.append("FizzBuzz")
-        else:
-            result.append(i)
-    return result
+class FizzBuzz:
+
+    def run(self, number: int) -> List:
+        result = []
+        start = 1
+        for num in range(start, number):
+            if self.is_fizz(num):
+                result.append("Fizz")
+            elif self.is_buzz(num):
+                result.append("Buzz")
+            elif self.is_fizz_buzz(num):
+                result.append("FizzBuzz")
+            else:
+                result.append(num)
+        return result
+
+    @staticmethod
+    def is_fizz(number: int) -> bool:
+        return number % 3 == 0
+
+    @staticmethod
+    def is_buzz(number: int) -> bool:
+        return number % 5 == 0
+
+    def is_fizz_buzz(self, number: int) -> bool:
+        return self.is_fizz(number) and self.is_buzz(number)
