@@ -17,7 +17,12 @@ def test_integer_sum() -> None:
 class TestFizzBuzz:
 
     def test_fizz_buzz(self) -> None:
+        # Given
         expected_result = [1, 2, "Fizz", 4, "Buzz"]
         fiz_buzz = FizzBuzz()
+        
+        # When
         result = fiz_buzz.run(6)
+        
+        # Then
         assert result == expected_result
